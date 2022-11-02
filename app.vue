@@ -1,33 +1,50 @@
-<script>
-import {defineNuxtComponent} from '#app'
+<script setup>
+// import {defineNuxtComponent} from '#app'
+// compositional API does not need this import
 
-export default defineNuxtComponent({
+import {computed, ref} from 'vue'
 
-  data: () => ({
-    photoGallery: [],
-  }),
-  computed: {
-    numberOfPhotos() {
-      return this.photoGallery.length;
-    },
-    evenAlbums() {
-       return this.photoGallery.filter(item => item.albumId % 2 === 0)
-    },
-    oddAlbums() {
-       return this.photoGallery.filter(item => !(item.albumId % 2 === 0))
-    }
-  },
+let photoGallery = ref([])
 
-  methods: {
-    fetchPhotoGallery() {
-      fetch('https://jsonplaceholder.typicode.com/photos')
-          .then(response => response.json())
-          .then(json => {
-            this.photoGallery = json
-          })
-    }
-  }
+const numberOfPhotos = computed(() => {
+  return photoGallery.value.length;
 })
+
+const evenAlbums = computed(()=> {
+  return photoGallery.value.filter(item => item.albumId % 2 === 0)
+})
+const oddAlbums = computed(()=> {
+  return photoGallery.value.filter(item => item.albumId % 2 === 1)
+})
+
+
+// export default defineNuxtComponent({
+//
+//   data: () => ({
+//     photoGallery: [],
+//   }),
+//   computed: {
+//     numberOfPhotos() {
+//       return this.photoGallery.length;
+//     },
+//     evenAlbums() {
+//        return this.photoGallery.filter(item => item.albumId % 2 === 0)
+//     },
+//     oddAlbums() {
+//        return this.photoGallery.filter(item => !(item.albumId % 2 === 0))
+//     }
+//   },
+//
+//   methods: {
+//     fetchPhotoGallery() {
+//       fetch('https://jsonplaceholder.typicode.com/photos')
+//           .then(response => response.json())
+//           .then(json => {
+//             this.photoGallery = json
+//           })
+//     }
+//   }
+// })
 </script>
 
 <template>
