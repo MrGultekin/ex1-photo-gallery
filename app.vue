@@ -25,7 +25,7 @@ export default defineNuxtComponent({
     <button @click="fetchPhotoGallery">Fetch Photos</button>
     <ul>
       <li v-for="photo in photoGallery" :key=" `photo-id-${photo.id}` ">
-        <img :src="photo.url" alt="colored photos">
+        <img :src="photo.thumbnailUrl" alt="colored photos">
       </li>
 
     </ul>
