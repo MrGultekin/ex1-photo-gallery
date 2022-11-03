@@ -1,6 +1,14 @@
-<script setup >
+<script setup>
 // import {defineNuxtComponent} from "nuxt/app";
-import {computed,ref} from "vue";
+import {defineProps, computed, ref} from "vue";
+
+defineProps({
+  title: {
+    type: String,
+    default: "Mustafa`s Nuxt",
+    // required: true NO NEED TO write this bcoz already default.
+  }
+})
 
 // export default defineNuxtComponent({
 //   data: () => ({
@@ -14,14 +22,14 @@ function fetchTodoList() {
 }
 
 // computed: {
-const completedTodos = computed(()=>{
+const completedTodos = computed(() => {
   return todoList.value.filter(todo => todo.completed)
 })
 
 // remainingTodos() {
 //   return this.todoList.filter(todo => !todo.completed);
 // }
-const remainingTodos = computed(()=>{
+const remainingTodos = computed(() => {
   return todoList.value.filter(todo => !todo.completed);
 })
 
@@ -38,7 +46,7 @@ const remainingTodos = computed(()=>{
         href="https://unsplash.com/s/photos/todos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
     </p>
-    <h1 class="title">Mustafa`s Nuxt</h1>
+    <h1 class="title">{{title}}</h1>
     <button @click="fetchTodoList"> Click to fetch Data</button>
     <p>Total todos :{{ todoList.length }}</p>
     <p>Completed todos :{{ completedTodos.length }}</p>
@@ -56,8 +64,8 @@ const remainingTodos = computed(()=>{
   </div>
 </template>
 
-<style module >
-.list{
+<style module>
+.list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
