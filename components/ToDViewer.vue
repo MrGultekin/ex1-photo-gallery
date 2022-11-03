@@ -38,7 +38,7 @@ const remainingTodos = computed(()=>{
         href="https://unsplash.com/s/photos/todos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
     </p>
-    <h1>Mustafa`s Nuxt</h1>
+    <h1 class="title">Mustafa`s Nuxt</h1>
     <button @click="fetchTodoList"> Click to fetch Data</button>
     <p>Total todos :{{ todoList.length }}</p>
     <p>Completed todos :{{ completedTodos.length }}</p>
