@@ -30,6 +30,11 @@
 
 <!--</script>-->
 
+<script setup>
+ import PhotoGallery from './components/photoGallery.vue'
+ import ToDViewer from './components/toDViewer.vue'
+</script>
+
 <template>
 
   <div class="container">
