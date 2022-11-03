@@ -3,6 +3,7 @@
 // compositional API does not need this import
 
 import {computed, ref, reactive} from 'vue'
+import ToDViewer  from './components/ToDViewer'
 
 let photoGallery = ref([])
 
@@ -33,17 +34,24 @@ function fetchPhotoGallery() {
 
   <div class="container">
     <div class="section">
-      <h1>Photo Gallery</h1>
+      <div class="columns">
+        <div class="column">
+          <h1>Photo Gallery</h1>
+          <button @click="fetchPhotoGallery">Fetch Photos</button>
+          <p> Total: {{ numberOfPhotos }} photos are available. </p>
+          <p> Even: {{ evenAlbums.length }} photos are available. </p>
+          <p> Odd: {{ oddAlbums.length }} photos are available. </p>
+          <ul class="list">
+            <li v-for="photo in photoGallery" :key=" `photo-id-${photo.id}` ">
+              <img :src="photo.thumbnailUrl" alt="colored photos">
+            </li>
+          </ul>
+        </div>
 
-      <button @click="fetchPhotoGallery">Fetch Photos</button>
-      <p> Total: {{ numberOfPhotos }} photos are available. </p>
-      <p> Even: {{ evenAlbums.length }} photos are available. </p>
-      <p> Odd: {{ oddAlbums.length }} photos are available. </p>
-      <ul class="list">
-        <li v-for="photo in photoGallery" :key=" `photo-id-${photo.id}` ">
-          <img :src="photo.thumbnailUrl" alt="colored photos">
-        </li>
-      </ul>
+        <div class="column">
+          <ToDViewer/>
+        </div>
+      </div>
     </div>
   </div>
 
