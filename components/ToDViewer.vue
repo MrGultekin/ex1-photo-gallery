@@ -55,7 +55,7 @@ const remainingTodos = computed(() => {
     <button @click="fetchTodoList"> Click to fetch Data</button>
 
 <!--     Metrics Slot-->
-    <slot name="metrics"/>
+    <slot name="metrics" :completed="completedTodos"/>
 
 <!--    <p>Total todos :{{ todoList.length }}</p>-->
 <!--    <p>Completed todos :{{ completedTodos.length }}</p>-->

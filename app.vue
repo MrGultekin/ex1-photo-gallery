@@ -30,11 +30,6 @@
 
 <!--</script>-->
 
-<script setup>
-import PhotoGallery from './components/photoGallery.vue'
-import ToDViewer from './components/toDViewer.vue'
-</script>
-
 <template>
 
   <div class="container">
@@ -43,10 +38,11 @@ import ToDViewer from './components/toDViewer.vue'
         <div class="column">
           <ToDViewer title="Instead of Mustafa`s Nuxt as prop">
             <template v-slot:hero>
-              <h2> SLOT in component and use it HERE xx</h2>
+              <h2> SLOT in component and use it HERE </h2>
               <img src="/todo.jpg" alt="todoPic">
             </template>
-            <template #metrics>
+            <template #metrics="slotProps">
+              <pre> {{slotProps}} </pre>
               <h3> Helped by v-slot:metrics in tod COMPONENT</h3>
             </template>
           </ToDViewer>
