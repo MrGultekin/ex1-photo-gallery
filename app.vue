@@ -38,15 +38,15 @@
         <div class="column">
           <ToDViewer title="Instead of Mustafa`s Nuxt as prop">
             <template v-slot:hero>
-              <h2> SLOT in component and use it HERE </h2>
+              <h3> SLOT in component and use it HERE </h3>
               <img src="/todo.jpg" alt="todoPic">
             </template>
 <!--            <template #metrics="slotProps">-->
-            <template v-slot:metrics="slotProps">
-              <strong> {{slotProps.completedSayisi.length}} </strong>
-<!--              <strong>{{slotProps.completed.length}} items completed</strong>-->
-              <h3> Helped by v-slot:metrics in tod COMPONENT</h3>
-            </template>
+<!--            <template v-slot:metrics="slotProps">-->
+<!--              <strong> {{slotProps.completedSayisi.length}} </strong>-->
+<!--&lt;!&ndash;              <strong>{{slotProps.completed.length}} items completed</strong>&ndash;&gt;-->
+<!--              <h3> Helped by v-slot:metrics in tod COMPONENT</h3>-->
+<!--            </template>-->
           </ToDViewer>
         </div>
         <div class="column">

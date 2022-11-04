@@ -39,7 +39,7 @@ const remainingTodos = computed(() => {
 
 <template>
   <div class="section">
-    <slot name="hero" />
+    <slot name="hero"/>
 
 
     <!--    <img src="/todo.jpg" alt="Eden Constantino">-->
@@ -54,13 +54,17 @@ const remainingTodos = computed(() => {
     <h1 class="title">{{ title }}</h1>
     <button @click="fetchTodoList"> Click to fetch Data</button>
 
-<!--     Metrics Slot-->
-    <slot name="metrics" :completedSayisi="completedTodos"/>
+    <!--     Metrics Slot-->
+    <slot name="metrics" :completedSayisi="completedTodos" :remainingSayisi="remainingTodos">
+      <p>
+          {{ completedTodos.length}} completedTodos | {{remainingTodos.length}} remainingTodos
+      </p>
+    </slot>
 
-<!--    <p>Total todos :{{ todoList.length }}</p>-->
-<!--    <p>Completed todos :{{ completedTodos.length }}</p>-->
-<!--    <p>Uncompleted todos :{{ remainingTodos.length }}</p>-->
 
+    <!--    <p>Total todos :{{ todoList.length }}</p>-->
+    <!--    <p>Completed todos :{{ completedTodos.length }}</p>-->
+    <!--    <p>Uncompleted todos :{{ remainingTodos.length }}</p>-->
 
 
     <!--    <pre>-->
