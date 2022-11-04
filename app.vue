@@ -31,8 +31,8 @@
 <!--</script>-->
 
 <script setup>
- import PhotoGallery from './components/photoGallery.vue'
- import ToDViewer from './components/toDViewer.vue'
+import PhotoGallery from './components/photoGallery.vue'
+import ToDViewer from './components/toDViewer.vue'
 </script>
 
 <template>
@@ -41,23 +41,24 @@
     <div class="section">
       <div class="columns">
         <div class="column">
-          <ToDViewer/>
+          <ToDViewer title="Instead of Mustafa`s Nuxt as prop">
+            <h2> SLOT in component and use it HERE</h2>
+            <img src="/todo.jpg" alt="todoPic">
+          </ToDViewer>
         </div>
-
         <div class="column">
           <PhotoGallery/>
         </div>
-
       </div>
     </div>
   </div>
-
 
 </template>
 
 <style lang="scss">
 @import './node_modules/bulma/bulma.sass';
-.list{
+
+.list {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }

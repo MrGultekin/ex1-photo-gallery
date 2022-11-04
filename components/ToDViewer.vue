@@ -1,6 +1,7 @@
 <script setup>
 // import {defineNuxtComponent} from "nuxt/app";
-import {defineProps, computed, ref} from "vue";
+import {computed, ref} from "vue";
+// import {defineProps, computed, ref} from "vue";
 
 defineProps({
   title: {
@@ -37,17 +38,23 @@ const remainingTodos = computed(() => {
 
 
 <template>
-  <div>
-    <img src="/todo.jpg" alt="Eden Constantino">
-    <p>
-      Photo by <a
-        href="https://unsplash.com/@edenconstantin0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Eden
-      Constantino</a> on <a
-        href="https://unsplash.com/s/photos/todos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  <div class="section">
+    <slot />
 
-    </p>
-    <h1 class="title">{{title}}</h1>
+
+    <!--    <img src="/todo.jpg" alt="Eden Constantino">-->
+    <!--    <p>-->
+    <!--      Photo by <a-->
+    <!--        href="https://unsplash.com/@edenconstantin0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Eden-->
+    <!--      Constantino</a> on <a-->
+    <!--        href="https://unsplash.com/s/photos/todos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>-->
+    <!--    </p>-->
+
+
+    <h1 class="title">{{ title }}</h1>
     <button @click="fetchTodoList"> Click to fetch Data</button>
+
+
     <p>Total todos :{{ todoList.length }}</p>
     <p>Completed todos :{{ completedTodos.length }}</p>
     <p>Uncompleted todos :{{ remainingTodos.length }}</p>
