@@ -42,8 +42,13 @@ import ToDViewer from './components/toDViewer.vue'
       <div class="columns">
         <div class="column">
           <ToDViewer title="Instead of Mustafa`s Nuxt as prop">
-            <h2> SLOT in component and use it HERE</h2>
-            <img src="/todo.jpg" alt="todoPic">
+            <template v-slot:hero>
+              <h2> SLOT in component and use it HERE xx</h2>
+              <img src="/todo.jpg" alt="todoPic">
+            </template>
+            <template #metrics>
+              <h3> Helped by v-slot:metrics in tod COMPONENT</h3>
+            </template>
           </ToDViewer>
         </div>
         <div class="column">
