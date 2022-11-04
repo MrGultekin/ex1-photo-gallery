@@ -41,8 +41,10 @@
               <h2> SLOT in component and use it HERE </h2>
               <img src="/todo.jpg" alt="todoPic">
             </template>
-            <template #metrics="slotProps">
-              <pre> {{slotProps}} </pre>
+<!--            <template #metrics="slotProps">-->
+            <template v-slot:metrics="slotProps">
+              <strong> {{slotProps.completedSayisi.length}} </strong>
+<!--              <strong>{{slotProps.completed.length}} items completed</strong>-->
               <h3> Helped by v-slot:metrics in tod COMPONENT</h3>
             </template>
           </ToDViewer>

@@ -30,7 +30,7 @@ function fetchPhotoGallery() {
 </script>
 
 <template>
-  <h1>Photo Galleryyyy</h1>
+  <h1>Photo Gallery</h1>
   <button @click="fetchPhotoGallery">Fetch Photos</button>
   <p> Total: {{ numberOfPhotos }} photos are available. </p>
   <p> Even: {{ evenAlbums.length }} photos are available. </p>

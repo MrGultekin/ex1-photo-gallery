@@ -1,7 +1,7 @@
 <script setup>
 // import {defineNuxtComponent} from "nuxt/app";
 import {computed, ref} from "vue";
-// import {defineProps, computed, ref} from "vue";
+// import {defineProps, computed, ref} from "vue"; import not necessary anymore for defineProps.
 
 defineProps({
   title: {
@@ -55,7 +55,7 @@ const remainingTodos = computed(() => {
     <button @click="fetchTodoList"> Click to fetch Data</button>
 
 <!--     Metrics Slot-->
-    <slot name="metrics" :completed="completedTodos"/>
+    <slot name="metrics" :completedSayisi="completedTodos"/>
 
 <!--    <p>Total todos :{{ todoList.length }}</p>-->
 <!--    <p>Completed todos :{{ completedTodos.length }}</p>-->
